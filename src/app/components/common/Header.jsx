@@ -8,7 +8,7 @@ export default function Header(){
             <div className="container mx-auto flex justify-between items-center">
                 {/* Add logo here */}
                 <Link href="/">
-                    <h1 className="text-4xl">Link <span className="text-green-400">.</span></h1>
+                    <h1 className="text-4xl">Abhishek <span className="text-green-400">.</span></h1>
                 </Link>
 
                 {/*Nav for desktop screen */}
