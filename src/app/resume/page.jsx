@@ -125,6 +125,7 @@ export default function Resume() {
           <TabsContent value="abot">
               advadv
           </TabsContent >
+          
         </Tabs>
       </div>
     </section>
