@@ -1,6 +1,6 @@
-import ProfilePhoto from "./components/ProfilePhoto";
-import Social from "./components/Social";
-import Stats from "./components/Stats";
+import ProfilePhoto from "../components/ProfilePhoto";
+import Social from "../components/Social";
+import Stats from "../components/Stats";
 
 export default function Home() {
   return (

@@ -1,4 +1,5 @@
-import Servies from "../components/Services";
+import Servies from "@/components/Services";
+
 
 export default function page() {
   return (
