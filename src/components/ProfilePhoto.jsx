@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-export default function ProfilePhoto(){
+export default function ProfilePhoto({image}){
     return(
         <div className="w-full h-full relative">
             <motion.div initial={{opacity:0}} animate={{opacity:1,
@@ -12,7 +12,7 @@ export default function ProfilePhoto(){
                 transition:{ delay:1,duration:0.4,ease:"easeInOut"}
                 }} 
                 className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute">
-                    <Image src="/profileimage.png" priority quality={100} fill alt="Profile Photo" className="object-contain rounded-full"/>
+                    {image ? <Image src={`/${image}`} priority quality={100} fill alt="Profile Photo" className="object-contain rounded-full"/> : ''}
                 </motion.div>
 
                 {/* image circle */}
