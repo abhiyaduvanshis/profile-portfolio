@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Home() {
 
-  const {userData, loading, error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
+  const {userData, loading, error } =  useUserData('https://profile-portfolio-snowy.vercel.app/api/user/getUserData','66a8c03ebc0a310d6601353a')
 
 
   return (
