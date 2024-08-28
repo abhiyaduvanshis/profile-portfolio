@@ -12,7 +12,7 @@ export default function ProfilePhoto({image}){
                 transition:{ delay:1,duration:0.4,ease:"easeInOut"}
                 }} 
                 className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute">
-                    {image ? <Image src={`/${image}`} priority quality={100} fill alt="Profile Photo" className="object-contain rounded-full"/> : ''}
+                    {image ? <Image src={`/media/user-profile/${image}`} priority quality={100} fill alt="Profile Photo" className="object-contain rounded-full"/> : ''}
                 </motion.div>
 
                 {/* image circle */}
