@@ -4,7 +4,7 @@ import UserModel from "@/model/UserModel";
 
 export async function GET(req) {
 
-    await dbConnect()
+    const text = await dbConnect()
     
 
     try {
@@ -17,7 +17,7 @@ export async function GET(req) {
             return NextResponse.json(
                 {
                     success:false,
-                    message:"User data not found!"
+                    message:text
                 },
                 {
                     status:404
