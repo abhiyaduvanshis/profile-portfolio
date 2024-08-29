@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Home() {
 
-  const {userData,userExpData, userSkillData,userEduData,loading, error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
+  const {userData,userExpData, userSkillData,userEduData,userServiceData,loading, error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
 
 
   return (

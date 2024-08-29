@@ -1,42 +1,15 @@
 
 "use client"
+import useUserData from "./customHooks/useUserData"
 import {BsArrowDownRight} from "react-icons/bs"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
-const serviesList = [
-    {
-        title:'Web Development',
-        description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.when an unknown printer took a galley of type and scrambled it to make a type specimen book',
-        href:''
-    },
-    {
-        title:'Mobile Development',
-        description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.when an unknown printer took a galley of type and scrambled it to make a type specimen book',
-        href:''
-    },
-    {
-        title:'UI Development',
-        description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.when an unknown printer took a galley of type and scrambled it to make a type specimen book',
-        href:''
-    },
-    {
-        title:'SEO',
-        description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.when an unknown printer took a galley of type and scrambled it to make a type specimen book',
-        href:''
-    },
-    {
-        title:'Graphics Development',
-        description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.when an unknown printer took a galley of type and scrambled it to make a type specimen book',
-        href:''
-    },
-    {
-        title:'Content Writing',
-        description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry.when an unknown printer took a galley of type and scrambled it to make a type specimen book',
-        href:''
-    }
-]
+
 export default function Servies(){
+
+    const {userData,userExpData,userSkillData,userEduData,userServiceData, loading, error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
+
     return(
         <>
             <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0 mt-28">
@@ -47,7 +20,7 @@ export default function Servies(){
                     className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
                     >
                         {
-                            serviesList.map((item,index)=>{
+                            userServiceData.map((item,index)=>{
                                 return (
                                     <div key={index} className="flex-1 flex flex-col justify-center gap-6 group">
                                         <div className="w-full flex justify-between items-center">
@@ -61,7 +34,7 @@ export default function Servies(){
                                             transition-all
                                             duration-500
                                             ">0{index+1}</div>
-                                            <Link href={item.href} 
+                                            <Link href={item.link} 
                                             className="
                                             w-[70px] 
                                             h-[70px] 

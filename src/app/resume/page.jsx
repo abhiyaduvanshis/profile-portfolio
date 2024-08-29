@@ -29,7 +29,7 @@ const tabField = [
 export default function Resume() {
 
 
-  const {userData,userExpData,userSkillData,userEduData, loading, error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
+  const {userData,userExpData,userSkillData,userEduData,userServiceData, loading, error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
 
   return (
     
