@@ -1,7 +1,10 @@
 import dbConnect from "@/lib/dbConnect";
 import { NextResponse } from "next/server";
 import UserModel from "@/model/UserModel";
-
+import ExperienceModel from "@/model/ExperienceModel";
+import ProjectModel from "@/model/ProjectModel";
+import SkillModel from "@/model/SkillModel";
+import EducationModel from "@/model/EducationModel";
 export async function GET(req) {
 
     const text = await dbConnect()
@@ -11,6 +14,11 @@ export async function GET(req) {
 
         const userId= '66a8c03ebc0a310d6601353a'
         const getUserData = await UserModel.findOne({_id:userId}).select("-password")
+        const userExperienceInfo = await ExperienceModel.find({ usersId: userId}).sort({_id:-1})
+        const userProjectInfo = await ProjectModel.find({ usersId: userId}).sort({_id:-1})
+        const userSkillInfo = await SkillModel.find({ usersId: userId}).sort({_id:-1})
+        const userEduInfo = await EducationModel.find({ usersId: userId}).sort({_id:-1})
+
 
         if(!getUserData){
 
@@ -30,7 +38,11 @@ export async function GET(req) {
             {
                 success:true,
                 message:"Data found",
-                result:getUserData
+                result:getUserData,
+                experienceInfo:userExperienceInfo,
+                projectInfo:userProjectInfo,
+                skillInfo:userSkillInfo,
+                educationInfo:userEduInfo
             },
             {
                 status:200

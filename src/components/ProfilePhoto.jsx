@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 export default function ProfilePhoto({image}){
+
     return(
         <div className="w-full h-full relative">
             <motion.div initial={{opacity:0}} animate={{opacity:1,

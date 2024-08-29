@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Home() {
 
-  const {userData, loading, error } =  useUserData('https://profile-portfolio-snowy.vercel.app/api/user/getUserData','66a8c03ebc0a310d6601353a')
+  const {userData,userExpData, userSkillData,userEduData,loading, error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
 
 
   return (
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
-            <h1 className="h1 mb-6"> Hello I'm <br/> <span className="text-green-400">{userData?.firstName} {userData?.lastName}</span></h1>
+            <h1 className="h1 mb-6"> Hello I'm <br/> <span className="text-green-400">{userData?.name}</span></h1>
             <span className="max-w-[500px] mb-9 text-white/80">{userData?.aboutme}</span>
             <div>
              

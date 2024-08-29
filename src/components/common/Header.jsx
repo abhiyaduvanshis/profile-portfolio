@@ -15,7 +15,7 @@ export default function Header(){
                 <div className="hidden md:flex items-center gap-8">
                     <Nav/>
                     <Link href="/">
-                        <button  className="bg-green-400 rounded-full p-2 text-xs text-black" color="blue">Hire me</button>
+                        <button  className="bg-green-400 rounded-full p-2 text-xs text-black font-bold" color="blue">Hire me</button>
                     </Link>
                 </div>
 
