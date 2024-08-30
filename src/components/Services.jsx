@@ -8,7 +8,15 @@ import Link from "next/link"
 
 export default function Servies(){
 
-    const {userData,userExpData,userSkillData,userEduData,userServiceData, loading, error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
+    const {
+        userData,
+        userExpData,
+        userSkillData,
+        userEduData,
+        userServiceData,
+        userProjectData,
+        loading, 
+        error } =  useUserData('/api/user/getUserData','66a8c03ebc0a310d6601353a')
 
     return(
         <>

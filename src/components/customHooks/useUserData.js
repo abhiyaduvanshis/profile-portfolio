@@ -10,6 +10,7 @@ function useUserData(url,userId){
     const [userSkillData, setuserSkillData] = useState([]);
     const [userEduData, setuserEduData] = useState([]);
     const [userServiceData, setuserServiceData] = useState([]);
+    const [userProjectData, setuserProjectData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -28,6 +29,7 @@ function useUserData(url,userId){
                     setuserSkillData(response?.data?.skillInfo)
                     setuserEduData(response?.data?.educationInfo)
                     setuserServiceData(response?.data?.serviceInfo)
+                    setuserProjectData(response?.data?.projectInfo)
                 }
             } catch (error) {
                 setError(error)
@@ -39,7 +41,7 @@ function useUserData(url,userId){
     },[url,userId])
 
     
-    return { userData,userExpData,userSkillData,userEduData,userServiceData,loading, error };
+    return { userData,userExpData,userSkillData,userEduData,userServiceData,userProjectData,loading, error };
 }
 
 export default useUserData
